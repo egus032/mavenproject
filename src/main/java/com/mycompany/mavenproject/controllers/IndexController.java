@@ -50,6 +50,10 @@ public class IndexController {
         return "index";
     }
     
+    @RequestMapping(method = RequestMethod.POST)
+    public String indexPagePost(){
+        return "index";
+    }
 
     
 }
