@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,20 @@
         <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template -->
         <link href="static/css/style.css" rel="stylesheet" type="text/css">
+        <script scr="myApp.js"></script>
     <title>HelloWorld page</title>
     </head>
     <body>
         <header><jsp:include page="/WEB-INF/views/header.jsp"/></header>
         
         <div class="main-content"><h3>Greeting : ${greeting}</h3></div>
+        
+        <div class="main-content-1">
+            <h3>${user}</h3>
+            
+        </div>
+        
+        
         
         <footer><jsp:include page="/WEB-INF/views/footer.jsp"/></footer>
         <!-- Bootstrap core JavaScript -->

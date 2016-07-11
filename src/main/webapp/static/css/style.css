@@ -8,8 +8,14 @@ and open the template in the editor.
     Author     : eguseynov
 */
 
-.main-content {
-    padding-top: 50px;
+.reg-form {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    padding-left: 110px;
+    padding-right: 80px;
+}
+.main-content-1 {
+    //padding-top: 5px;
     padding-bottom: 20px;
     padding-left: 110px;
     padding-right: 80px;

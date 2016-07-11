@@ -37,7 +37,9 @@ public class UserDaoImpl implements UserDaoInterface {
     
     @Override
     public User createUser(User user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sessionFactory.getCurrentSession().createSQLQuery("INSERT INTO user (email, last_name, first_name, age)"
+                + " VALUES (?, ?, ?, ?)");
+        return user;
     }
 
     @Override
