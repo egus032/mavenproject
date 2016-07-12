@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,47 +33,53 @@
             </div>
         </header>
         
-        <div class="reg-form" ng-controller="RegFormCtrl">
-            <form class="form-horizontal">
-              <fieldset>
-                <legend>Registration form</legend>
-                <div class="form-group">
-                  <label for="input_email" class="col-lg-2 control-label">Email</label>
-                  <div class="col-lg-4">
-                      <input type="text" class="form-control" name="email" id="email" 
-                             ng-model="master.email" required="" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="input_lastname" class="col-lg-2 control-label">Last Name</label>
-                  <div class="col-lg-4">
-                      <input type="text" class="form-control" name="lastname" required=""
-                           id="lastname" ng-model="master.lastname" placeholder="Last Name">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="input_firstname" class="col-lg-2 control-label">First Name</label>
-                  <div class="col-lg-4">
-                      <input type="text" class="form-control" name="firstname" required=""
-                           id="firstname" ng-model="master.firstname" placeholder="First Name">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="input_age" class="col-lg-2 control-label">Age</label>
-                  <div class="col-lg-4">
-                      <input type="text" class="form-control" name="age" required=""
-                           id="age" ng-model="master.age" placeholder="Age">
-                  </div>
-                </div>
+        <div class="container">
+            <div class="reg-form" ng-controller="RegFormCtrl">
+                <form class="form-horizontal" name="form" ng-submit="submit()">
+                  <fieldset>
+                    <legend>Registration form</legend>
+                    <div class="form-group">
+                      <label for="input_email" class="col-lg-2 control-label">Email</label>
+                      <div class="col-lg-4">
+                          <input type="text" class="form-control" name="email" id="email" 
+                                 ng-model="master.email" required="" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="input_lastname" class="col-lg-2 control-label">Last Name</label>
+                      <div class="col-lg-4">
+                          <input type="text" class="form-control" name="lastname" required=""
+                               id="lastname" ng-model="master.lastname" placeholder="Last Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="input_firstname" class="col-lg-2 control-label">First Name</label>
+                      <div class="col-lg-4">
+                          <input type="text" class="form-control" name="firstname" required=""
+                               id="firstname" ng-model="master.firstname" placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="input_age" class="col-lg-2 control-label">Age</label>
+                      <div class="col-lg-4">
+                          <input type="text" class="form-control" name="age" required=""
+                               id="age" ng-model="master.age" placeholder="Age">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
                 
-                <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+                <pre ng-bind="master | json"></pre>
+            </div>
+            
+            
         </div>
         
         
@@ -96,7 +102,7 @@
         <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
-        <script src="static/js/myApp.js"></script>
+        <script src="static/js/app.js"></script>
         
     </body>
 </html>

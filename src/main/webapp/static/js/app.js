@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 
-	angular.module("myApp", ["ngResource"])
+	angular.module("app", ["ngResource"])
                 .controller("RegFormCtrl", ["$scope", function ($scope){
                         $scope.master = {
                             email: $scope.email,
