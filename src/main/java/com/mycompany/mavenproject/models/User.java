@@ -99,7 +99,7 @@ public class User implements Serializable {
                 + "id=" + id 
                 + ", email=" + email
                 + ", lastName=" + lastName
-                + ", firsName=" + firstName
+                + ", firstName=" + firstName
                 + ", age=" + age
                 + "}";
     }

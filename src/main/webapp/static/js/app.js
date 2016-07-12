@@ -2,22 +2,29 @@
 	"use strict";
 
 	angular.module("app", ["ngResource"])
-                .controller("RegFormCtrl", ["$scope", function ($scope){
-                        $scope.master = {
-                            email: $scope.email,
-                            lastname: $scope.lastname,
-                            firstname: $scope.firstname,
-                            age: $scope.age
-                        };                          
+                .controller("RegFormCtrl", ["$scope", "$http", function ($scope, $http){
+                        $scope.master = {};                 
                         $scope.submit = function (){
-                            
-                        };
-                }])
-                .service("UserCrudApi", ["$resource", function ($resource){
-                        return $resource("/", null,{ 
-                            indexPagePost: {method: "POST", url: "/"}
+                            $http({
+                               method: "POST",
+                               url: "http://localhost:8081/mavenproject/",
+                               data: $scope.master,
+                               headers : {"Content-Type": "application/json"} 
+                            })
+                            .success(function(data) {
+                                if (data.errors) {
+                                  // Showing errors.
+                                  $scope.errorName = data.errors.name;
+                                  $scope.errorUserName = data.errors.username;
+                                  $scope.errorEmail = data.errors.email;
+                                } else {
+                                  $scope.message = data.message;
+                                }
                         });
-                }]);
+                        
+                        };
+                
+                    }]);
 
 })();
 
