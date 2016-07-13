@@ -13,12 +13,13 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.SQLQuery;
 
 /**
  *
  * @author eguseynov
  */
-
+@Transactional
 @Repository("userDao")
 public class UserDaoImpl implements UserDaoInterface {
     
@@ -34,12 +35,15 @@ public class UserDaoImpl implements UserDaoInterface {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-    
+    /*
+    метод добавляет пользователя в базу данных, он вызывется в методе контроллера
+    но надо разобраться с возвращаемым значением.
+    */
     @Override
     public User createUser(User user) {
-        sessionFactory.getCurrentSession().createSQLQuery("INSERT INTO user (email, last_name, first_name, age)"
-                + " VALUES (?, ?, ?, ?)");
+        sessionFactory.getCurrentSession().save(user);
         return user;
+        
     }
 
     @Override

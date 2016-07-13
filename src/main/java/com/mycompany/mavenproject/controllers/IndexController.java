@@ -57,11 +57,17 @@ public class IndexController {
         return "index";
     }
     
+    /*
+    этот метод принимает на вход данные из angularjs и выводит их в консоль
+    как user.toString, но не возвращает новую страницу на стороне клиента
+    */
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"})
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public String indexPagePost(@RequestBody User user){
         log.info(user.toString());
+        log.info(user.getEmail());
+        userDaoInterface.createUser(user);
         return "result";
     }
     
