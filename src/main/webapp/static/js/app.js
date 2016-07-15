@@ -24,7 +24,11 @@
                         
                         };
                 
-                    }]);
+                    }])
+                
+                .controller("AuthFormCtrl", ["$scope", "$http", function ($scope, $http){
+                        
+                }]);
 
 })();
 
